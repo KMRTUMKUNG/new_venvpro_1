@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from myapp.models import person
+
 # Create your views here.
 def index(request):
-    name= "KMRTUMKUNG"
-    age = 20
-    return render(request,"index.html", {"name":name , "age":age})
+    all_person = person.objects.all()
+    return render(request,"index.html",{"all_person" : all_person})
 
 def about(request):
     return render(request,"about.html")
