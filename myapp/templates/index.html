@@ -5,24 +5,37 @@
 {% endblock  %}
 {% block  content %}
 <div>
-    <H1>หน้าแรกของเว็ปไซด์</H1>
+    <H1 class="text-center">หน้าแรกของเว็ปไซด์</H1>
     
-    <table class="table">
+    <table class="table table-dark table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">ชื่อ</th>
             <th scope="col">นามสกุล</th>
             <th scope="col">อายุ</th>
+            <th scope="col">เมล</th>
+            <th scope="col">เบอร์โทรศัพท์</th>
+            <th scope="col">เวลา_วันที่</th>
+            <th scope="col">แก้ไช</th>
+            <th scope="col">ลบ</th>
+            
+           
           </tr>
         </thead>
         <tbody class="table-group-divider">
          {% for person in all_person %}
          <tr>
            <th scope="row">{{person.id}}</th>
-            <th>{{person.name}}</th>
-            <th>{{person.lastname}}</th>
-            <th>{{person.age}}</th>
+            <td>{{person.name}}</td>
+            <td>{{person.lastname}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.mail}}</td>
+            <td>{{person.Phone}}</td>
+            <td>{{person.date}}</td>
+            <td><a href="#" class="btn btn-info">แก้ไช</a></td>
+            <td><a href="#" class="btn btn-danger">ลบ</a></td>
+            
         </tr>    
         {% endfor %}
         </tbody>
