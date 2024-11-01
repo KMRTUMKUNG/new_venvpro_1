@@ -5,7 +5,9 @@ class person(models.Model):
     name = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
     age = models.IntegerField()
-    date = models.DateField(auto_now_add=True)
+    mail = models.CharField(max_length=50)
+    Phone = models.CharField(max_length=50)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "Name : " + self.name +" Age : " +str(self.age)
+        return "Name : " + self.name +" Age : " +str(self.age) 
